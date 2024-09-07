@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum HeadingStyle: String, OptionConvertible {
+public enum HeadingStyle: String, OptionConvertible, Sendable {
     case atx
     case setext
 }

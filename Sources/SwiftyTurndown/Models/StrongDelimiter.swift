@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum StrongDelimiter: String, OptionConvertible {
+public enum StrongDelimiter: String, OptionConvertible, Sendable {
     case asterisk = "**"
     case underscore = "__"
 }

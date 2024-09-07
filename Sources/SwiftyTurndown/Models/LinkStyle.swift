@@ -7,8 +7,8 @@
 
 import Foundation
 
-public enum LinkStyle: OptionConvertible {
-    public enum ReferenceStyle: String, OptionConvertible {
+public enum LinkStyle: OptionConvertible, Sendable {
+    public enum ReferenceStyle: String, OptionConvertible, Sendable {
         case full
         case collapsed
         case shortcut

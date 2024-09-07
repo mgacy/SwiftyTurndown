@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum EmDelimiter: String, OptionConvertible {
+public enum EmDelimiter: String, OptionConvertible, Sendable {
     case underscore = "_"
     case asterisk = "*"
 }

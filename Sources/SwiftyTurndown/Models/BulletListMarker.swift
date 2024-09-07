@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum BulletListMarker: String, OptionConvertible {
+public enum BulletListMarker: String, OptionConvertible, Sendable {
     case minus = "-"
     case plus = "+"
     case asterisk = "*"

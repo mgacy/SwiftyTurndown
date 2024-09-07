@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum HorizontalRule: String, OptionConvertible {
+public enum HorizontalRule: String, OptionConvertible, Sendable {
     case asterisk = "***"
     case minus = "---"
     case underscore = "___"

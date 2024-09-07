@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct TurndownConfiguration {
+public struct TurndownConfiguration: Sendable {
     var bulletListMarker: BulletListMarker?
     var codeBlockStyle: CodeBlockStyle?
     var emDelimiter: EmDelimiter?
