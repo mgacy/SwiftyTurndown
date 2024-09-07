@@ -22,18 +22,18 @@ public enum CodeBlockStyle: OptionConvertible, Sendable {
     var optionValue: String {
         switch self {
         case .indented:
-            return "indented"
+            "indented"
         case .fenced(let fence):
-            return "fenced \(fence.option.joined(separator: " "))"
+            "fenced \(fence.option.joined(separator: " "))"
         }
     }
 
     var option: [String] {
         switch self {
         case .indented:
-            return ["--\(Self.optionName)", optionValue]
+            ["--\(Self.optionName)", optionValue]
         case .fenced(let fence):
-            return ["--\(Self.optionName)", "fenced"] + fence.option
+            ["--\(Self.optionName)", "fenced"] + fence.option
         }
     }
 }

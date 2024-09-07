@@ -22,9 +22,9 @@ public enum LinkStyle: OptionConvertible, Sendable {
     public var optionValue: String {
         switch self {
         case .inlined:
-            return "inlined"
+            "inlined"
         case .referenced(let referenceStyle):
-            return "referenced \(referenceStyle.option.joined(separator: " "))"
+            "referenced \(referenceStyle.option.joined(separator: " "))"
         }
     }
 }
