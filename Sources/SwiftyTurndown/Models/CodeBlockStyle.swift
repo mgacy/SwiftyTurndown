@@ -8,7 +8,7 @@
 import Foundation
 
 public enum CodeBlockStyle: OptionConvertible, Sendable {
-    public enum Fence: String, OptionConvertible {
+    public enum Fence: String, OptionConvertible, Sendable {
         case grave = "```"
         case tilde = "~~~"
 
