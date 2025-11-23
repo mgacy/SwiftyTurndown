@@ -27,6 +27,15 @@ public enum LinkStyle: OptionConvertible, Sendable {
             "referenced \(referenceStyle.option.joined(separator: " "))"
         }
     }
+
+    public var option: [String] {
+        switch self {
+        case .inlined:
+            ["--\(Self.optionName)", optionValue]
+        case .referenced(let referenceStyle):
+            ["--\(Self.optionName)", "referenced"] + referenceStyle.option
+        }
+    }
 }
 
 public extension LinkStyle {
