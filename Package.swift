@@ -1,4 +1,4 @@
-// swift-tools-version: 5.9
+// swift-tools-version: 6.2
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -6,18 +6,19 @@ import PackageDescription
 let package = Package(
     name: "SwiftyTurndown",
     platforms: [
-        .macOS(.v13),
+        .macOS(.v13)
     ],
     products: [
-        .library(name: "SwiftyTurndown", targets: ["SwiftyTurndown"]),
+        .library(name: "SwiftyTurndown", targets: ["SwiftyTurndown"])
     ],
     dependencies: [
-        // .package(url: /* package url */, from: "1.0.0"),
+        .package(url: "https://github.com/mgacy/ReleaseExecutor.git", branch: "main")
     ],
     targets: [
         .target(
             name: "SwiftyTurndown",
             dependencies: [
+                "ReleaseExecutor"
             ]
         ),
         .testTarget(
