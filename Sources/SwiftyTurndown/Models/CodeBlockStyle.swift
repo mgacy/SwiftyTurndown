@@ -23,8 +23,8 @@ public enum CodeBlockStyle: OptionConvertible, Sendable {
         switch self {
         case .indented:
             "indented"
-        case .fenced(let fence):
-            "fenced \(fence.option.joined(separator: " "))"
+        case .fenced:
+            "fenced"
         }
     }
 
@@ -33,7 +33,7 @@ public enum CodeBlockStyle: OptionConvertible, Sendable {
         case .indented:
             ["--\(Self.optionName)", optionValue]
         case .fenced(let fence):
-            ["--\(Self.optionName)", "fenced"] + fence.option
+            ["--\(Self.optionName)", optionValue] + fence.option
         }
     }
 }
