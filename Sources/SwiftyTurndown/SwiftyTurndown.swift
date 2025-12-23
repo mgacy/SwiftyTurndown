@@ -80,7 +80,23 @@ public struct SwiftyTurndown: Sendable {
 
 private extension SwiftyTurndown {
     static func defaultCacheDirectory() throws -> AbsolutePath {
-        try AbsolutePath(validating: URL.cachesDirectory.path())
+        #if os(macOS)
+        let cacheURL = URL.cachesDirectory
+        #elseif os(Linux)
+        // Use XDG_CACHE_HOME if set, otherwise ~/.cache (XDG Base Directory Specification)
+        let cacheURL: URL
+        if let xdgCache = ProcessInfo.processInfo.environment["XDG_CACHE_HOME"] {
+            cacheURL = URL(fileURLWithPath: xdgCache)
+        } else {
+            cacheURL = FileManager.default.homeDirectoryForCurrentUser
+                .appendingPathComponent(".cache")
+        }
+        #else
+        // Fallback for other platforms
+        let cacheURL = FileManager.default.temporaryDirectory
+        #endif
+
+        return try AbsolutePath(validating: cacheURL.path())
             .appending(component: "SwiftyTurndown")
     }
 
