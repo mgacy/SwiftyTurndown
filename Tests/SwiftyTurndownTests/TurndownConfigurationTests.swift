@@ -125,7 +125,7 @@ struct TurndownConfigurationTests {
         #expect(args.count == 18) // 7 options, with 2 nested options = 18 total elements
 
         // Verify format: all flags start with --
-        let flags = args.enumerated().compactMap { index, arg in
+        let flags = args.compactMap { arg in
             arg.hasPrefix("--") ? arg : nil
         }
         #expect(flags.count == 9) // 7 main flags + 2 nested flags
