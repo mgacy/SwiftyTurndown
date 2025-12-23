@@ -12,7 +12,7 @@ let package = Package(
         .library(name: "SwiftyTurndown", targets: ["SwiftyTurndown"])
     ],
     dependencies: [
-        .package(url: "https://github.com/mgacy/ReleaseExecutor.git", branch: "main")
+        .package(url: "https://github.com/mgacy/ReleaseExecutor.git", from: "0.1.0")
     ],
     targets: [
         .target(
