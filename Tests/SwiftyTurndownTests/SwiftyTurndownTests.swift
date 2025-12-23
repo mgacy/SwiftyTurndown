@@ -8,7 +8,7 @@
 import Testing
 @testable import SwiftyTurndown
 
-@Suite("SwiftyTurndown Tests")
+@Suite("SwiftyTurndown Tests", .serialized)
 struct SwiftyTurndownTests {
 
     @Test("Basic HTML to markdown conversion")
