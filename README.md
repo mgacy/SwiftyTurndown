@@ -4,7 +4,7 @@ SwiftyTurndown is a Swift package that provides a simple interface to convert HT
 
 ## Installation
 
-Add `ReleaseExecutor` to your Swift package by including it in your `Package.swift` file:
+Add `SwiftyTurndown` to your Swift package by including it in your `Package.swift` file:
 
 ```swift
 .package(url: "https://github.com/mgacy/SwiftyTurndown.git", from: "0.1.0")
