@@ -1,0 +1,44 @@
+//
+//  LinkStyle.swift
+//  SwiftyTurndown
+//
+//  Created by Mathew Gacy on 7/11/23.
+//
+
+import Foundation
+
+public enum LinkStyle: OptionConvertible, Sendable {
+    public enum ReferenceStyle: String, OptionConvertible, Sendable {
+        case full
+        case collapsed
+        case shortcut
+
+        static let optionName = "link-reference-style"
+    }
+
+    case inlined
+    case referenced(ReferenceStyle)
+
+    public var optionValue: String {
+        switch self {
+        case .inlined:
+            "inlined"
+        case .referenced(let referenceStyle):
+            "referenced \(referenceStyle.option.joined(separator: " "))"
+        }
+    }
+
+    public var option: [String] {
+        switch self {
+        case .inlined:
+            ["--\(Self.optionName)", optionValue]
+        case .referenced(let referenceStyle):
+            ["--\(Self.optionName)", "referenced"] + referenceStyle.option
+        }
+    }
+}
+
+public extension LinkStyle {
+    static let `default` = inlined
+    static let optionName = "link-style"
+}
