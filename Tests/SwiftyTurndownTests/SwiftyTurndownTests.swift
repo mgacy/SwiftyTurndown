@@ -21,7 +21,7 @@ struct SwiftyTurndownTests {
 
     @Test("Exact version pinning works")
     func exactVersion() async throws {
-        let sut = try SwiftyTurndown(version: .exact("0.3.0"))
+        let sut = try SwiftyTurndown(version: .exact("0.4.0"))
         let output = try await sut.markdownify(html: "<h1>Test</h1>")
         #expect(!output.isEmpty)
     }
